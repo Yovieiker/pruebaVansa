@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prueba Técnica</title>
+    <link rel="icon" href="images/favicon.png" type="image/png" sizes="24x24" />
+    <link href="css/index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <audio id="bgsound" preload loop>
+      <source src="media/bg-audio.mp3" type="audio/mp3" />
+    </audio>
+
+    <audio id="clics" preload>
+      <source src="media/clic.mp3" type="audio/mp3" />
+    </audio>
+
+    <div id="app"></div>
+
+    <script src="vendor/jquery/jquery-3.6.0.min.js"></script>
+    <script src="vendor/jquery/jquery-ui.min.js"></script>
+    <script src="js/navigo.js"></script>
+    <script src="js/router.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        // Reproducir sonido de fondo
+        var bgSound = document.getElementById("bgsound");
+        bgSound.play();
+
+        // Reproducir sonido al hacer clic
+        $("body").on("click", function () {
+          var clicSound = document.getElementById("clics");
+          clicSound.play();
+        });
+      });
+    </script>
+  </body>
+</html>
