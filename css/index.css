@@ -596,7 +596,7 @@ body {
   }
   .slide .container-info .main {
     padding: 2rem;
-    margin-left: 4rem;
+    margin-right: 0;
     justify-content: center;
     position: relative;
   }

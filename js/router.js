@@ -92,10 +92,7 @@ router.on("/info", function () {
         </div>
         <div id="hidden-text" class="container-perfil-text">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-            enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat.
+          Mi nombre es Yovieiker Canelon, tengo 24 años , soy desarrollador web, me apasiona aprender y seguir mejorando cada dia. Abierto a cualquier oportunidades que ayude a mi crecimiento personal como profesional. 
           </p>
         </div>
       </div>
@@ -117,8 +114,8 @@ router.on("/info", function () {
   // Habilita el botón de siguiente luego de desplegar la información
   $(document).ready(function () {
     $("#toggleButton").click(function () {
-      $("#hidden-text").toggle(); // Alternar la visibilidad del texto oculto
-      $(".inactivo").toggleClass("inactivo activo"); // Alternar las clases del botón de siguiente
+      $("#hidden-text").toggle();
+      $(".inactivo").toggleClass("inactivo activo");
     });
   });
   $(".slide").addClass("activo");
