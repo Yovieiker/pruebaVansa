@@ -9,53 +9,46 @@ const router = new Navigo("/", {
 /*-------------------*/
 router.on("/", function () {
   app.innerHTML = `
-  <div class="slide slide-index">
-
-    <div class="contenido">
-    <div class="container">
-    <div class="main">
-      <div class="character1">
-        <img src="images/character-1.png" alt="" />
-        <img src="images/character.png" alt="" class="img-responsive"/>
-
-      </div>
-      <div>
-        <div>
-          <h1 class="titulo">
-            Te damos la <br />
-            bienvenida a Vansa:
-          </h1>
-          <p class="subtitulo">Prueba técnica de:</p>
-          <div class="contenedor-nombre">
-            <p class="nombre">Yovieiker Canelon</p>
+    <div class="slide slide-index">
+      <div class="contenido">
+        <div class="container">
+          <div class="main">
+            <div class="character1">
+              <img src="images/character-1.png" alt="" />
+              <img src="images/character.png" alt="" class="img-responsive"/>
+            </div>
+            <div>
+              <div>
+                <h1 class="titulo">
+                  Te damos la <br />
+                  bienvenida a Vansa:
+                </h1>
+                <p class="subtitulo">Prueba técnica de:</p>
+                <div class="contenedor-nombre">
+                  <p class="nombre">Yovieiker Canelon</p>
+                </div>
+                <div class="contenedor-vacante">
+                  <p class="vacante">
+                    Vacante <br />
+                    Front End
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="character2">
+              <img src="images/character.png" alt="" />
+            </div>
           </div>
-          <div class="contenedor-vacante">
-            <p class="vacante">
-              Vacante <br />
-              Front End
-            </p>
+          <div class="botones">
+            <div class="navegacion">
+              <ul>
+                <li><a href="/info"  data-navigo class="inactivo">Iniciar</a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-      <div class="character2">
-        <img src="images/character.png" alt="" />
-
-      </div>
-     
-    </div>
-    <div class="botones">
-    <div class="navegacion">
-    <ul>
-      <li><a href="/info"  data-navigo class="inactivo">Iniciar</a></li>
-    </ul>
-  </div>
-    </div>
-  </div> 
-    </div>
-
-  
-
-  </div>`;
+    </div>`;
 
   $(document).ready(function () {
     // Habilita el botón de siguiente luego de 3 segundos
@@ -72,44 +65,41 @@ router.on("/", function () {
 /*------------------*/
 router.on("/info", function () {
   app.innerHTML = `
-  <div class="slide slide-info">
-
-    <div class="contenido">
-    <div class="container-info">
-    <div class="main">
-      <div class="character-info">
-        <img src="images/character-3.png" alt="" />
-      </div>
-      <div class="container-perfil">
-        <div class="container-text">
-          <p class="text-1">Haz click aqui</p>
+    <div class="slide slide-info">
+      <div class="contenido">
+        <div class="container-info">
+          <div class="main">
+            <div class="character-info">
+              <img src="images/character-3.png" alt="" />
+            </div>
+            <div class="container-perfil">
+              <div class="container-text">
+                <p class="text-1">Haz click aqui</p>
+              </div>
+              <div class="container-img">
+                <img src="images/perfil.jpeg" alt="" />
+                <button id="toggleButton">
+                  <img src="images/Vector-1.png" alt="" />
+                </button>
+              </div>
+              <div id="hidden-text" class="container-perfil-text">
+                <p>
+                  Mi nombre es Yovieiker Canelon, tengo 24 años, soy desarrollador web, me apasiona aprender y seguir mejorando cada día. Abierto a cualquier oportunidad que ayude a mi crecimiento personal como profesional. 
+                </p>
+              </div>
+            </div>
+            <div class="botones">
+              <div class="navegacion">
+                <ul>
+                  <li><a href="/" data-navigo>Anterior</a></li>    
+                  <li><a href="/video"  data-navigo class="inactivo">Siguiente</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="container-img">
-          <img src="images/perfil.jpeg" alt="" />
-          <button id="toggleButton">
-            <img src="images/Vector-1.png" alt="" />
-          </button>
-        </div>
-        <div id="hidden-text" class="container-perfil-text">
-          <p>
-          Mi nombre es Yovieiker Canelon, tengo 24 años , soy desarrollador web, me apasiona aprender y seguir mejorando cada dia. Abierto a cualquier oportunidades que ayude a mi crecimiento personal como profesional. 
-          </p>
-        </div>
       </div>
-      <div class="botones">
-      <div class="navegacion">
-      <ul>
-        <li><a href="/" data-navigo>Anterior</a></li>    
-        <li><a href="/video"  data-navigo class="inactivo">Siguiente</a></li>
-      </ul>
-    </div>
-      </div>
-    </div>
-  </div>
-    </div>
-
-
-  </div>`;
+    </div>`;
 
   // Habilita el botón de siguiente luego de desplegar la información
   $(document).ready(function () {
@@ -118,62 +108,58 @@ router.on("/info", function () {
       $(".inactivo").toggleClass("inactivo activo");
     });
   });
+
   $(".slide").addClass("activo");
 });
-
 /*-------------------*/
 /*------ Video ------*/
 /*-------------------*/
 router.on("/video", function () {
   app.innerHTML = `
-  <div class="slide slide-video">
-  <div class="contenido">
-    <div class="container">
-      <p class="titulo-video">VEAMOS ESTE VIDEO</p>
-      <div class="main-video">
-        <div class="centrado">
-          <div class="video-text">
-            <p>¡Haz clic en el botón!</p>
-          </div>
-          <div class="container-video">
-            <button id="openButton">
-              <img src="/images/play.png" alt="" />
-            </button>
-            <div id="videoPopup" class="popup">
-              <div class="popup-content">
-                <video id="videoPlayer" src="/media/video1.mp4"></video>
-                <button id="playPauseBtn">
-                  <img
-                    id="playIcon"
-                    src="/images/play.png"
-                    alt="Play"
-                    style="display: none"
-                  />
-                  <img id="pauseIcon" src="/images/pause.png" alt="Pause" />
+    <div class="slide slide-video">
+      <div class="contenido">
+        <div class="container">
+          <p class="titulo-video">VEAMOS ESTE VIDEO</p>
+          <div class="main-video">
+            <div class="centrado">
+              <div class="video-text">
+                <p>¡Haz clic en el botón!</p>
+              </div>
+              <div class="container-video">
+                <button id="openButton">
+                  <img src="/images/play.png" alt="" />
                 </button>
+                <div id="videoPopup" class="popup">
+                  <div class="popup-content">
+                    <video id="videoPlayer" src="/media/video1.mp4"></video>
+                    <button id="playPauseBtn">
+                      <img
+                        id="playIcon"
+                        src="/images/play.png"
+                        alt="Play"
+                        style="display: none"
+                      />
+                      <img id="pauseIcon" src="/images/pause.png" alt="Pause" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="character-video">
+              <img src="images/character-4.png" alt="" />
+              <div class="botones">
+                <div class="navegacion">
+                  <ul>
+                    <li><a href="/info" data-navigo>Anterior</a></li>    
+                    <li><a href="/redes" data-navigo class="inactivo">Siguiente</a></li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="character-video">
-          <img src="images/character-4.png" alt="" />
-          <div class="botones">
-          <div class="navegacion">
-          <ul>
-            <li><a href="/info" data-navigo>Anterior</a></li>    
-            <li><a href="/redes" data-navigo class="inactivo">Siguiente</a></li>
-          </ul>
-        </div>
-          </div>
-        </div>
       </div>
-    </div>
-  </div>
-</div>
-
-    
-
-  </div>`;
+    </div>`;
 
   // Habilita el botón de siguiente luego de ver el video
   // La música de fondo se detiene o disminuye mientras se vea el video
@@ -219,6 +205,7 @@ router.on("/video", function () {
     // Asignar evento click al botón de reproducción/pausa
     playPauseBtn.on("click", playPauseVideo);
   });
+
   $(".slide").addClass("activo");
 });
 
@@ -227,107 +214,70 @@ router.on("/video", function () {
 /*-------------------*/
 router.on("/redes", function () {
   app.innerHTML = `
-  <div class="slide slide-redes">
-
-    <div class="contenido">
-
-    </div>
-    <div class="container-info">
-    <div class="main-redes ">
-      <div class="character-redes">
-        <img src="images/character-5.png" alt="" />
-      </div>
-      <div>
-        <div class="container-redes">
-          <h1>CONOCE MÁS DE VANSA</h1>
-          <div class="container-text-redes">
-            <p class="text-1">¡Haz clic en cada ítem!</p>
+    <div class="slide slide-redes">
+      <div class="contenido"></div>
+      <div class="container-info">
+        <div class="main-redes">
+          <div class="character-redes">
+            <img src="images/character-5.png" alt="" />
           </div>
-          <div class="container-items">
-            <div class="container-item">
-              <div class="container-redes-img">
-                <img 
-                class="margin-img"
-                  src="images/iconamoon_search.png"
-                  alt=""
-                />
-                <button  id="toggleButtonWeb">
-                  <img
-                    src="images/Vector-1.png"
-                    alt=""
-                    style="rotate: 270deg"
-                  />
-                </button>
+          <div>
+            <div class="container-redes">
+              <h1>CONOCE MÁS DE VANSA</h1>
+              <div class="container-text-redes">
+                <p class="text-1">¡Haz clic en cada ítem!</p>
               </div>
-              <div id="hidden-text-web" class="container-item-oculto">
-                <p>
-                  Página web
-                  
-                </p>
-                <a href="https://www.vansa.co/" target="_blank"> https://www.vansa.co/</a>
+              <div class="container-items">
+                <div class="container-item">
+                  <div class="container-redes-img">
+                    <img class="margin-img" src="images/iconamoon_search.png" alt="" />
+                    <button id="toggleButtonWeb">
+                      <img src="images/Vector-1.png" alt="" style="rotate: 270deg" />
+                    </button>
+                  </div>
+                  <div id="hidden-text-web" class="container-item-oculto">
+                    <p>Página web</p>
+                    <a href="https://www.vansa.co/" target="_blank">https://www.vansa.co/</a>
+                  </div>
+                </div>
+                <div class="container-item">
+                  <div id="hidden-text-lkdin" class="container-item-oculto-lkdin">
+                    <p>LinkedIn</p>
+                    <a href="https://co.linkedin.com/company/vansalatam" target="_blank">https://co.linkedin.com/company/vansalatam</a>
+                  </div>
+                  <div class="container-redes-img">
+                    <button class="ml-2" id="toggleButtonLk">
+                      <img src="images/Vector-1.png" alt="" style="rotate: 90deg" />
+                    </button>
+                    <img class="margin-img" src="images/ph_linkedin-logo-light.png" alt="" />
+                  </div>
+                </div>
+                <div class="container-item">
+                  <div class="container-redes-img">
+                    <img class="margin-img" src="images/circum_instagram.png" alt="" />
+                    <button id="toggleButtonInsta">
+                      <img src="images/Vector-1.png" alt="" style="rotate: 270deg" />
+                    </button>
+                  </div>
+                  <div id="hidden-text-instagram" class="container-item-oculto">
+                    <p>Instagram</p>
+                    <a href="https://www.instagram.com/vansalatam/" target="_blank">https://www.instagram.com/vansalatam/</a>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="container-item">
-              <div id="hidden-text-lkdin" class="container-item-oculto-lkdin">
-                <p>
-                  LinkedIn
-                </p>
-                <a href="https://co.linkedin.com/company/vansalatam" target="_blank">https://co.linkedin.com/company/vansalatam</a>
-              </div>
-              <div class="container-redes-img">
-                <button
-                 class="ml-2"
-                  id="toggleButtonLk"
-                 
-                >
-                  <img
-                    src="images/Vector-1.png"
-                    alt=""
-                    style="rotate: 90deg"
-                  />
-                </button>
-                <img class="margin-img" src="images/ph_linkedin-logo-light.png" alt="" />
-              </div>
-            </div>
-            <div class="container-item">
-              <div class="container-redes-img">
-                <img
-                class="margin-img"
-                  src="images/circum_instagram.png"
-                  alt=""
-                />
-                <button id="toggleButtonInsta">
-                  <img
-                    src="images/Vector-1.png"
-                    alt=""
-                    style="rotate: 270deg"
-                  />
-                </button>
-              </div>
-              <div id="hidden-text-instagram" class="container-item-oculto">
-                <p>
-                  Instagram 
-                </p>
-                <a href="https://www.instagram.com/vansalatam/" target="_blank"> https://www.instagram.com/vansalatam/</a>
-
-              </div>
+          </div>
+          <div class="botones">
+            <div class="navegacion">
+              <ul>
+                <li><a href="/video" data-navigo>Anterior</a></li>
+                <li><a href="/servicios" data-navigo class="inactivo">Siguiente</a></li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
-      <div class="botones">
-      <div class="navegacion">
-      <ul>
-        <li><a href="/video" data-navigo>Anterior</a></li>    
-        <li><a href="/servicios" data-navigo class="inactivo">Siguiente</a></li>
-      </ul>
-    </div>
-      </div>
-    </div>
-  </div>
-    
-
-  </div>`;
+    </div>`;
 
   // Habilita el botón de siguiente luego de ver todos los desplegables (3)
   $(document).ready(function () {
@@ -369,89 +319,85 @@ router.on("/redes", function () {
     toggleButtonLk.on("click", toggleTextLkdin);
     toggleButtonInsta.on("click", toggleTextInstagram);
   });
+
   $(".slide").addClass("activo");
 });
-
 /*-----------------------*/
 /*------ Servicios ------*/
 /*-----------------------*/
 router.on("/servicios", function () {
   app.innerHTML = `
   <div class="slide slide-servicios">
-  <audio id="transition" preload>
-  <source src="media/transition.mp3" type="audio/mp3" />
-</audio>
-    <div class="contenido">
-    <div class="container">
-    <div class="container-servicio">
-      <h1>LO QUE HACEMOS</h1>
-
-      <div class="carousel-container">
-      <div class="container-text">
-        <p class="text-1">¡Haz clic las flechas!</p>
-      </div>
-      <div class="carousel">
-      <div class="slide-servicio servicio-background">
-        <div class="text-servicio">
-          <h2>E-Learning</h2>
-          <p>
-            Digitalizamos tu formación corporativa con experiencias
-            interactivas y enriquecedoras.
-          </p>
+      <audio id="transition" preload>
+        <source src="media/transition.mp3" type="audio/mp3" />
+      </audio>
+      <div class="contenido">
+        <div class="container">
+          <div class="container-servicio">
+            <h1>LO QUE HACEMOS</h1>
+            <div class="carousel-container">
+              <div class="container-text">
+                <p class="text-1">¡Haz clic las flechas!</p>
+              </div>
+              <div class="carousel">
+                <div class="slide-servicio servicio-background">
+                  <div class="text-servicio">
+                    <h2>E-Learning</h2>
+                    <p>
+                      Digitalizamos tu formación corporativa con experiencias
+                      interactivas y enriquecedoras.
+                    </p>
+                  </div>
+                  <div>
+                    <img src="images/mdi_book-education-outline.png" alt="" />
+                  </div>
+                </div>
+                <div class="slide-servicio servicio-background">
+                  <div class="text-servicio">
+                    <h2>Formación con expertos</h2>
+                    <p>
+                      Ofrecemos sesiones de entrenamiento y talleres prácticos
+                      personalizados para abordar necesidades empresariales.
+                    </p>
+                  </div>
+                  <div>
+                    <img src="images/mdi_book-education-outline-2.png" alt="" />
+                  </div>
+                </div>
+                <div class="slide-servicio servicio-background">
+                  <div class="text-servicio">
+                    <h2>Formación</h2>
+                    <p>
+                      Reunimos profesionales de diferentes industrias para colaborar y crecer juntos.
+                    </p>
+                  </div>
+                  <div>
+                    <img src="images/mdi_book-education-outline-3.png" alt="" />
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-navigation">
+                <button class="prev-btn inactive">&#8249;</button>
+                <button class="next-btn">&#8250;</button>
+              </div>
+              <div class="carousel-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
+            </div>
+          </div>
+          <div class="botones">
+            <div class="navegacion">
+              <ul>
+                <li><a href="/redes" data-navigo>Anterior</a></li>    
+                <li><a href="/cierre" data-navigo class="inactivo">Siguiente</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div>
-          <img src="images/mdi_book-education-outline.png" alt="" />
-        </div>
       </div>
-      <div class="slide-servicio servicio-background">
-        <div class="text-servicio">
-          <h2>Formación con expertos</h2>
-          <p>
-            Ofrecemos sesiones de entrenamiento y talleres prácticos
-            personalizados para abordar necesidades empresariales.
-          </p>
-        </div>
-        <div>
-          <img src="images/mdi_book-education-outline-2.png" alt="" />
-        </div>
-      </div>
-
-      <div class="slide-servicio servicio-background">
-        <div class="text-servicio">
-          <h2>Formación</h2>
-          <p>
-          Reunimos profesionales de diferentes industrias para colaborar y crecer juntos.
-          </p>
-        </div>
-        <div>
-          <img src="images/mdi_book-education-outline-3.png" alt="" />
-        </div>
-      </div>
-    </div>
-      <div class="carousel-navigation">
-        <button class="prev-btn inactive">&#8249;</button>
-        <button class="next-btn">&#8250;</button>
-      </div>
-      <div class="carousel-dots">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-      </div>
-    </div>
-    </div>
-    <div class="botones">
-      <div class="navegacion">
-      <ul>
-        <li><a href="/redes" data-navigo>Anterior</a></li>    
-        <li><a href="/cierre" data-navigo class="inactivo">Siguiente</a></li>
-      </ul>
-    </div>
-      </div>
-  </div>
-    </div>
-
-
-  </div>`;
+    </div>`;
 
   // Habilita el botón de siguiente luego de ver todos los slides del carrusel
 
@@ -560,64 +506,59 @@ router.on("/servicios", function () {
 /*--------------------*/
 router.on("/cierre", function () {
   app.innerHTML = `
-  <div class="slide slide-cierre">
-
-  <div class="contenido">
-    <div class="container">
-      <div class="main-finalizar">
-        <div class="character-finalizar">
-          <img src="images/imgFinal.png" alt="" />
+    <div class="slide slide-cierre">
+      <div class="contenido">
+        <div class="container">
+          <div class="main-finalizar">
+            <div class="character-finalizar">
+              <img src="images/imgFinal.png" alt="" />
+            </div>
+            <div class="text-final">
+              <h1>
+                ¡Hemos <br />
+                culminado!
+              </h1>
+              <p>
+                Ahora que terminaste, cuéntanos por mail
+                <strong>¿Cómo te sentiste en la prueba?</strong>
+              </p>
+              <p>Hablamos pronto.</p>
+              <div class="botones ocultar-responsive">
+                <div class="navegacion">
+                  <ul>
+                    <li><a href="/" data-navigo>Reiniciar</a></li>
+                    <li><a href="/https://www.linkedin.com/in/yovieiker-canelon-443691244/" target="_blank" class="inactivo">Finalizar</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="text-final">
-          <h1>
-            ¡Hemos <br />
-            culminado!
-          </h1>
-          <p>
-            Ahora que terminaste, cuéntanos por mail
-            <strong>¿Cómo te sentiste en la prueba?</strong>
-          </p>
-          <p>Hablamos pronto.</p>
-          <div class="botones ocultar-responsive ">
-      <div class="navegacion">
-      <ul>
-        <li><a href="/" data-navigo>Reiniciar</a></li>    
-        <li><a  href="/https://www.linkedin.com/in/yovieiker-canelon-443691244/" target="_blank" class="inactivo">Finalizar</a></li>
-      </ul>
-    </div>
       </div>
+
+      <div class="botones ocultar-botones-web">
+        <div class="navegacion">
+          <ul>
+            <li><a href="/" data-navigo>Reiniciar</a></li>
+            <li><a href="https://www.linkedin.com/in/yovieiker-canelon-443691244/" target="_blank" class="inactivo">Finalizar</a></li>
+          </ul>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="botones ocultar-botones-web">
-      <div class="navegacion">
-      <ul>
-        <li><a href="/" data-navigo>Reiniciar</a></li>    
-        <li><a href="https://www.linkedin.com/in/yovieiker-canelon-443691244/" target="_blank" class="inactivo">Finalizar</a></li>
-        </ul>
-    </div>
-      </div>
-
-</div>`;
+    </div>`;
 
   $(document).ready(function () {
     // Después de 3 segundos, habilita el botón de finalizar
     setTimeout(function () {
       $("a.inactivo").removeClass("inactivo");
     }, 3000);
-    //Redigir al link de linkedin
+
+    // Redirigir al enlace de Linkedin
     var finalizarLink = $("a.inactivo");
-
     var currentURL = "https://www.linkedin.com/in/yovieiker-canelon-443691244/";
-
     var correctedURL = currentURL.replace("http://127.0.0.1:5500", "");
-
     finalizarLink.attr("href", correctedURL);
   });
 
   $(".slide").addClass("activo");
 });
-
 router.resolve(initialUrl || "/");
